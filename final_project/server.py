@@ -11,15 +11,13 @@ def renderIndexPage():
 @app.route("/englishToFrench")
 def englishToFrench():
     textToTranslate = request.args.get('textToTranslate')
-    # Use "en" for English (ISO 639-1 code)
-    translated_text = english_to_french(textToTranslate, source_language='en')
+    translated_text = english_to_french(textToTranslate)
     return translated_text
 
 @app.route("/frenchToEnglish")
 def frenchToEnglish():
     textToTranslate = request.args.get('textToTranslate')
-    # Use "fr" for French (ISO 639-1 code)
-    translated_text = french_to_english(textToTranslate, source_language='fr')
+    translated_text = french_to_english(textToTranslate)
     return translated_text
 
 if __name__ == "__main__":
